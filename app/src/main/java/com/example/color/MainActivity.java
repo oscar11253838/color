@@ -20,27 +20,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txvR =findViewById(R.id.textView);
-        txvG =findViewById(R.id.textView2);
-        txvB =findViewById(R.id.textView3);
-        txv =findViewById(R.id.textView4);
+        txvR =findViewById(R.id.textView2);
+        txvG =findViewById(R.id.textView3);
+        txvB =findViewById(R.id.textView4);
+        txv =findViewById(R.id.textView5);
     }
 
     public void changecolor(View v){
         Random x = new Random();
 
-        int red = x.nextInt(bound: 256);
-        txvR.setText("RED:" + red);
-        txvR.setTextColor(Color.rgb(red, green: 0 , blue: 0));
+        int red = x.nextInt( 256);
+        txvR.setText("RED : " + red);
+        txvR.setTextColor(Color.rgb(red,0,0));
 
-        int green = x.nextInt(bound: 256);
-        txvR.setText("RED:" + red);
-        txvR.setTextColor(Color.rgb(red, green: 0 , blue: 0));
+        int green = x.nextInt(256);
+        txvG.setText("GREEN : " + green);
+        txvG.setTextColor(Color.rgb(0, green, 0));
 
-        int blue = x.nextInt(bound: 256);
-        txvR.setText("RED:" + red);
-        txvR.setTextColor(Color.rgb(red, green: 0 , blue: 0));
+        int blue = x.nextInt(256);
+        txvB.setText("BLUE : " + blue);
+        txvB.setTextColor(Color.rgb(0, 0 , blue));
 
-
+        text += red + ", " + green + ", " + blue + "\n";
+        txv.setTextSize(16);
+        txv.setText(text);
+        txv.setMovementMethod(new ScrollingMovementMethod());
+        txv.setBackgroundColor(Color.rgb(red ,green ,blue));
     }
 }
